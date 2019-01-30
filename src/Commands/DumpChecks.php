@@ -33,8 +33,7 @@ class DumpChecks extends BaseCommand
 
                 $result = [
                     'name' => $host->name,
-                    'ssh_user' => $host->ssh_user,
-                    'checks' => $checks,
+                    'ssh_user' => $host->ssh_user
                 ];
                 if ($host->port) {
                     $result['port'] = $host->port;
@@ -42,6 +41,7 @@ class DumpChecks extends BaseCommand
                 if ($host->ip) {
                     $result['ip'] = $host->ip;
                 }
+                $result['checks'] = $checks;
 
                 return $result;
             }
